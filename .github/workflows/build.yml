@@ -26,3 +26,11 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Build
         run: mvn -B verify
+      - name: Get the date
+        id: date
+        run: echo "::set-output name=date::$(date +'%m-%d')"
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ steps.date.outputs.date }}-CoreProtect
+          path: target/*.jar
