@@ -33,7 +33,7 @@ public final class Chat {
 
     public static void sendMessage(CommandSender sender, String message) {
         if (sender instanceof ConsoleCommandSender) {
-            message = message.replace(Color.DARK_AQUA, ChatColor.DARK_AQUA.toString());
+            message = message.replace(Color.GOLD, ChatColor.GOLD.toString());
         }
 
         sender.sendMessage(message);
@@ -54,7 +54,7 @@ public final class Chat {
 
     public static void sendGlobalMessage(CommandSender user, String string) {
         if (user instanceof ConsoleCommandSender) {
-            sendMessage(user, Color.DARK_AQUA + "[CoreProtect] " + Color.WHITE + string);
+            sendMessage(user, Color.GOLD + "[SnowyProtect] " + Color.WHITE + string);
             return;
         }
 
@@ -62,12 +62,12 @@ public final class Chat {
         server.getConsoleSender().sendMessage("[CoreProtect] " + string);
         for (Player player : server.getOnlinePlayers()) {
             if (player.isOp() && !player.getName().equals(user.getName())) {
-                sendMessage(player, Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + string);
+                sendMessage(player, Color.GOLD + "SnowyProtect " + Color.WHITE + "- " + string);
             }
         }
         if (user instanceof Player) {
             if (((Player) user).isOnline()) {
-                sendMessage(user, Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + string);
+                sendMessage(user, Color.GOLD + "SnowyProtect " + Color.WHITE + "- " + string);
             }
         }
     }
