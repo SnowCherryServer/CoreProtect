@@ -7,7 +7,7 @@ public class ChatMessage {
     /**
      * Returns the plugin name with the DARK_AQUA chat color.
      */
-    String pluginName = Color.DARK_AQUA + "CoreProtect";
+    String pluginName = Color.GOLD + "SnowyProtect";
 
     String message;
     String textColor = Color.WHITE;
@@ -104,7 +104,7 @@ public class ChatMessage {
         int indexLast = string.lastIndexOf("\"");
         if (indexFirst > -1 && indexLast > indexFirst) {
             String quoteText = string.substring(indexFirst + 1, indexLast);
-            string = string.replace(quoteText, Color.DARK_AQUA + ChatColor.stripColor(quoteText) + textColor);
+            string = string.replace(quoteText, Color.GOLD + ChatColor.stripColor(quoteText) + textColor);
         }
 
         return string;
